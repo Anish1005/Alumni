@@ -8,7 +8,7 @@ const ProfilePage = () => {
         role: "Alumni",
         batch: "2020",
         department: "Computer Science",
-        avatar: "https://randomuser.me/api/portraits/men/1.jpg",
+        avatar: "https://randomuser.me/api/portraits/men/4.jpg",
         achievements: [
             { id: 1, title: "Workshop Expert", description: "Attended 10+ technical workshops", icon: "workshop" },
             { id: 2, title: "Intern Extraordinaire", description: "Completed 3 internships", icon: "internship" },

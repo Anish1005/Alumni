@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const http = require('http');
-const {Server} = require('socket.io');
+const { Server } = require('socket.io');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 const multer = require('multer');
@@ -31,10 +31,10 @@ mongoose
 
 // Define User Schema
 const userSchema = new mongoose.Schema({
-  name: {type: String, required: true},
-  email: {type: String, required: true, unique: true},
-  role: {type: String, enum: ['Doctor', 'Patient'], required: true},
-  createdAt: {type: Date, default: Date.now},
+  name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  role: { type: String, enum: ['Doctor', 'Patient'], required: true },
+  createdAt: { type: Date, default: Date.now },
 });
 
 // Create User Model
@@ -42,41 +42,41 @@ const User = mongoose.model('User', userSchema);
 
 // API Routes
 app.post('/api/users', async (req, res) => {
-  const {name, email, role} = req.body;
+  const { name, email, role } = req.body;
 
   if (!name || !email || !role) {
     return res
       .status(400)
-      .json({message: 'All fields (name, email, role) are required'});
+      .json({ message: 'All fields (name, email, role) are required' });
   }
 
   try {
-    const existingUser = await User.findOne({email});
+    const existingUser = await User.findOne({ email });
     if (existingUser) {
-      return res.status(400).json({message: 'User already exists'});
+      return res.status(400).json({ message: 'User already exists' });
     }
 
-    const newUser = new User({name, email, role});
+    const newUser = new User({ name, email, role });
     await newUser.save();
 
-    res.status(201).json({message: 'User created successfully', user: newUser});
+    res.status(201).json({ message: 'User created successfully', user: newUser });
   } catch (err) {
-    res.status(500).json({message: 'Internal server error'});
+    res.status(500).json({ message: 'Internal server error' });
   }
 });
 
 app.get('/api/users/:email', async (req, res) => {
-  const {email} = req.params;
+  const { email } = req.params;
 
   try {
-    const user = await User.findOne({email});
+    const user = await User.findOne({ email });
     if (user) {
       res.status(200).json(user);
     } else {
-      res.status(404).json({message: 'User not found'});
+      res.status(404).json({ message: 'User not found' });
     }
   } catch (err) {
-    res.status(500).json({message: 'Internal server error'});
+    res.status(500).json({ message: 'Internal server error' });
   }
 });
 
@@ -93,7 +93,6 @@ const eventSchema = new mongoose.Schema({
 
 const Event = mongoose.model('Event', eventSchema);
 
-// API to Create an Event
 app.post('/api/events', async (req, res) => {
   try {
     const { title, description, date, time, meetingLink } = req.body;

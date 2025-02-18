@@ -63,14 +63,14 @@
 .profile-points {
     text-align: right;
     padding: 1rem;
-    background: var(--light-blue);
+    background: rgb(196, 240, 196);
     border-radius: 8px;
 }
 
 .points-value {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--primary-blue);
+    color: rgb(15, 111, 15);
 }
 
 .points-label {
@@ -216,7 +216,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--primary-blue);
+    color: rgb(15, 161, 15);
     font-weight: 600;
 }
 

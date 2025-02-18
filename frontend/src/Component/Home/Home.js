@@ -13,11 +13,11 @@ const Home = () => {
                 <div className="user-profile">
                     <Link to="/profile" className="user-profile-link">
                         <img
-                            src="https://cdn-icons-png.flaticon.com/128/1144/1144709.png"
+                            src="https://randomuser.me/api/portraits/men/4.jpg"
                             alt="User"
                             className="profile-pic"
                         />
-                        <span className="user-name">John Doe</span>
+                        <span className="user-name">Karan Singh</span>
                     </Link>
                 </div>
             </div>
@@ -41,7 +41,7 @@ const Home = () => {
                     <Link to="/newsletters">
                         <button>Newsletters</button>
                     </Link>
-                    <Link to="/video-call">
+                    <Link to="/video_call">
                         <button>Video Call</button>
                     </Link>
                 </div>
