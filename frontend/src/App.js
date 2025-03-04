@@ -9,6 +9,7 @@ import AddEvent from './Component/Event/AddEvent';
 import EventList from './Component/Event/EventList';
 import Home from './Component/Home/Home';
 import Profile from './Component/Profile/Profile';
+import NewsletterPage from './Component/Newsletters/NewsletterPage';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
             </EventProvider>
           }
         />
+        <Route path="/newsletter" element={<NewsletterPage />} />
       </Routes>
     </div>
   );
