@@ -17,6 +17,7 @@ import Forum from "./Component/Forum/Forum";
 import Chatbot from "./Component/Chatbot/Chatbot";
 import NewsletterPage from "./Component/Newsletters/NewsletterPage";
 import Newsletter1 from "./Component/Newsletters/Newsletter";
+import Connections from './Component/Profile/Connections';
 import Message from "./Component/Message/Message";
 import AdminLogin from "./Admin/AdminLogin";
 import ProtectedAdminRoute from "./Admin/ProtectedAdminRoute";
@@ -106,6 +107,7 @@ function App() {
                 <Route path="/newsletter" element={<NewsletterPage />} />
                 <Route path="/newsletter1" element={<Newsletter1 />} />
                 <Route path="/messages" element={<Message />} />
+                <Route path="/connections" element={<Connections />} />
               </Routes>
               <Chatbot />
             </>
