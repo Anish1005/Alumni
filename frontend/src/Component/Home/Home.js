@@ -3,6 +3,7 @@ import './Home.css';
 import EventList from '../../Admin/AdminComponents/Event/EventList';
 import {Link} from 'react-router-dom';
 import {useEffect, useState} from 'react';
+import JobBoard from "../JobBoard/JobBoard";
 
 const Home = () => {
   const [name, setName] = useState('');

@@ -35,6 +35,9 @@ import FAQ from "./Admin/AdminComponents/faq/faq";
 import Calendar from "./Admin/AdminComponents/calendar/calendar";
 import Geography from "./Admin/AdminComponents/geography/geography";
 
+// Added JobBoard Import
+import JobBoard from "./Component/JobBoard/JobBoard";
+
 function App() {
   const location = useLocation();
   const [theme, colorMode] = useMode();
@@ -62,8 +65,8 @@ function App() {
                     <Route path="/admin-contacts" element={<Contacts />} />
                     <Route path="/admin-invoices" element={<Invoices />} />
                     <Route path="/admin-form" element={<Form />} />
-                    <Route path="/admin-addevent" element={<AddEvent/>}/>
-                    <Route path="/admin-listevent" element={<EventList/>}/>
+                    <Route path="/admin-addevent" element={<AddEvent />} />
+                    <Route path="/admin-listevent" element={<EventList />} />
                     <Route path="/admin-bar" element={<Bar />} />
                     <Route path="/admin-pie" element={<Pie />} />
                     <Route path="/admin-line" element={<Line />} />
@@ -106,6 +109,9 @@ function App() {
                 <Route path="/newsletter" element={<NewsletterPage />} />
                 <Route path="/newsletter1" element={<Newsletter1 />} />
                 <Route path="/messages" element={<Message />} />
+
+                {/* Added Job Board Route */}
+                <Route path="/job-board" element={<JobBoard />} />
               </Routes>
               <Chatbot />
             </>
