@@ -1,11 +1,8 @@
 import React from 'react';
 import { Shield, Award, Briefcase, Book, Users, Star, Medal } from 'lucide-react';
-import { useNavigate } from 'react-router-dom'; 
 import './Profile.css';
 
 const ProfilePage = () => {
-    const navigate = useNavigate(); // 
-
     const userData = {
         name: "Karan Singh",
         role: "Alumni",
@@ -83,12 +80,7 @@ const ProfilePage = () => {
                     <div className="stat-value">{userData.stats.projectsCompleted}</div>
                     <div className="stat-label">Projects</div>
                 </div>
-                {/* ✅ Connections Card - Clickable */}
-                <div
-                    className="stat-card"
-                    onClick={() => navigate('/connections')}
-                    style={{ cursor: 'pointer' }} // ✅ Make it clickable
-                >
+                <div className="stat-card">
                     <Users className="stat-icon" />
                     <div className="stat-value">{userData.stats.connectionsCount}</div>
                     <div className="stat-label">Connections</div>
