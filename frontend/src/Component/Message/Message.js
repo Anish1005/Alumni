@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import io from "socket.io-client";
 import moment from "moment";
 import "./Message.css";
@@ -13,18 +13,22 @@ const Message = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [clientsTotal, setClientsTotal] = useState(0);
   const [typingUser, setTypingUser] = useState("");
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const dropdownRef = useRef(null);
+
+  const roomOptions = [
+    "Placement Discussions",
+    "General Foreign Studies",
+    "Master's in Science (MS)",
+    "Master's in Business Analytics (MBA)",
+    "GATE Examination",
+  ];
 
   useEffect(() => {
     socket.on("clients-total", (count) => setClientsTotal(count));
-
-    socket.on("chat-message", (data) => {
-      setMessages((prev) => [...prev, { ...data, read: false }]);
-    });
-
-    socket.on("chat-history", (history) => {
-      setMessages(history);
-    });
-
+    socket.on("chat-message", (data) => setMessages((prev) => [...prev, { ...data, read: false }]));
+    socket.on("chat-history", (history) => setMessages(history));
     socket.on("typing", (user) => {
       setTypingUser(user);
       setTimeout(() => setTypingUser(""), 2000);
@@ -32,13 +36,23 @@ const Message = () => {
 
     socket.on("message-read", (messageId) => {
       setMessages((prev) =>
-        prev.map((msg) =>
-          msg.id === messageId ? { ...msg, read: true } : msg
-        )
+        prev.map((msg) => (msg.id === messageId ? { ...msg, read: true } : msg))
       );
     });
 
     return () => socket.disconnect();
+  }, []);
+
+  useEffect(() => {
+    // Close dropdown when clicking outside
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowDropdown(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const joinRoom = () => {
@@ -47,23 +61,6 @@ const Message = () => {
     }
   };
 
-  // const sendMessage = (e) => {
-  //   e.preventDefault();
-  //   if (message.trim() !== "") {
-  //     const chatData = {
-  //       id: Date.now(),
-  //       user: username,
-  //       message,
-  //       room,
-  //       timestamp: new Date(),
-  //       read: false,
-  //     };
-
-  //     socket.emit("message", chatData);
-  //     setMessages((prev) => [...prev, chatData]);
-  //     setMessage("");
-  //   }
-  // };
   const sendMessage = (e) => {
     e.preventDefault();
     if (message.trim()) {
@@ -74,38 +71,17 @@ const Message = () => {
   };
 
   let typingTimeout;
-
   const handleTyping = () => {
     if (room) {
       socket.emit("typing", { username, room });
-  
-      // Clear the previous timeout to avoid multiple triggers
+
       clearTimeout(typingTimeout);
-  
-      // After 2 seconds of inactivity, emit "stopped typing"
       typingTimeout = setTimeout(() => {
         socket.emit("stopped-typing", room);
       }, 2000);
     }
   };
-  
 
-  useEffect(() => {
-    socket.on("typing", (user) => {
-      setTypingUser(user);
-    });
-  
-    socket.on("stopped-typing", () => {
-      setTypingUser("");
-    });
-  
-    return () => {
-      socket.off("typing");
-      socket.off("stopped-typing");
-    };
-  }, []);
-  
-  
   return (
     <div className="chat-container">
       <h1 className="title">Chat 💬</h1>
@@ -127,13 +103,38 @@ const Message = () => {
           <div className="name">
             <input type="text" className="name-input" value={username} disabled />
           </div>
-          <div className="room_chat">
-            <input
-              type="text"
-              placeholder="Enter room name"
-              value={room}
-              onChange={(e) => setRoom(e.target.value)}
-            />
+
+          {/* Room Selection with Dropdown */}
+          <div className="room_chat" ref={dropdownRef}>
+            <div className="room-input-container">
+              <input
+                type="text"
+                placeholder="Enter room name"
+                value={room}
+                onChange={(e) => setRoom(e.target.value)}
+                onFocus={() => setShowDropdown(true)} // Show dropdown when clicking inside input
+              />
+              <button
+                className="dropdown-button"
+                onClick={(e) => {
+                  e.stopPropagation(); // Prevent event bubbling
+                  setShowDropdown((prev) => !prev);
+                }}
+              >
+                ▼
+              </button>
+            </div>
+
+            {showDropdown && (
+              <ul className="dropdown-menu">
+                {roomOptions.map((option, index) => (
+                  <li key={index} onClick={() => { setRoom(option); setShowDropdown(false); }}>
+                    {option}
+                  </li>
+                ))}
+              </ul>
+            )}
+
             <button onClick={joinRoom}>Join Room</button>
           </div>
 
@@ -141,9 +142,7 @@ const Message = () => {
             {messages.map((msg, index) => (
               <li
                 key={index}
-                className={`message ${msg.user === username ? "right" : "left"} ${
-                  msg.read ? "read" : ""
-                }`}
+                className={`message ${msg.user === username ? "right" : "left"} ${msg.read ? "read" : ""}`}
               >
                 <strong>{msg.user}:</strong> {msg.message}
                 <span className="timestamp">{moment(msg.timestamp).format("HH:mm")}</span>
@@ -172,4 +171,3 @@ const Message = () => {
 };
 
 export default Message;
-
