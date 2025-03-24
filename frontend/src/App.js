@@ -20,6 +20,7 @@ import Newsletter1 from "./Component/Newsletters/Newsletter";
 import Message from "./Component/Message/Message";
 import AdminLogin from "./Admin/AdminLogin";
 import ProtectedAdminRoute from "./Admin/ProtectedAdminRoute";
+import Connections from './Component/Profile/Connections';
 
 import Sidebar from "./Admin/AdminComponents/global/Sidebar";
 import Topbar from "./Admin/AdminComponents/global/Topbar";
@@ -109,6 +110,7 @@ function App() {
                 <Route path="/newsletter" element={<NewsletterPage />} />
                 <Route path="/newsletter1" element={<Newsletter1 />} />
                 <Route path="/messages" element={<Message />} />
+                <Route path="/connections" element={<Connections />} />
 
                 {/* Added Job Board Route */}
                 <Route path="/job-board" element={<JobBoard />} />
