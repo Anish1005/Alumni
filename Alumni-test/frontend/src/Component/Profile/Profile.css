@@ -1,0 +1,246 @@
+:root {
+    --primary-blue: #1e40af;
+    --secondary-blue: #3b82f6;
+    --light-blue: #dbeafe;
+    --hover-blue: #2563eb;
+    --white: #ffffff;
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-600: #475569;
+    --gray-700: #334155;
+}
+
+.profile-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--gray-50);
+    min-height: 100vh;
+}
+
+.profile-header {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--light-blue);
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.profile-details {
+    display: flex;
+    gap: 1rem;
+    color: var(--gray-600);
+    align-items: center;
+}
+
+.profile-details span {
+    font-size: 0.95rem;
+}
+
+.profile-points {
+    text-align: right;
+    padding: 1rem;
+    background: rgb(196, 240, 196);
+    border-radius: 8px;
+}
+
+.points-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(15, 111, 15);
+}
+
+.points-label {
+    color: var(--gray-600);
+    font-size: 0.9rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--secondary-blue);
+    margin-bottom: 1rem;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--gray-600);
+    font-size: 0.9rem;
+}
+
+.section-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--light-blue);
+    padding-bottom: 0.5rem;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.achievement-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--gray-50);
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.achievement-card:hover {
+    transform: translateY(-3px);
+    background: var(--light-blue);
+}
+
+.achievement-icon {
+    background: var(--white);
+    padding: 0.8rem;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-icon svg {
+    color: var(--secondary-blue);
+}
+
+.achievement-content {
+    flex: 1;
+}
+
+.achievement-title {
+    font-weight: 600;
+    color: var(--gray-700);
+    margin-bottom: 0.3rem;
+}
+
+.achievement-description {
+    color: var(--gray-600);
+    font-size: 0.9rem;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.activity-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: var(--gray-50);
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.activity-card:hover {
+    background: var(--light-blue);
+}
+
+.activity-icon {
+    background: var(--white);
+    padding: 0.8rem;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.activity-icon svg {
+    color: var(--secondary-blue);
+}
+
+.activity-points {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgb(15, 161, 15);
+    font-weight: 600;
+}
+
+.points-icon {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-points {
+        width: 100%;
+    }
+
+    .profile-details {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+}
