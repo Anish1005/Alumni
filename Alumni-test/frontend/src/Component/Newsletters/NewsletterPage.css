@@ -2,7 +2,7 @@
 
 .newsletter-page {
     max-width: 1400px;
-    margin: 0 auto;
+    margin:80px;
     padding: 50px 20px;
     display: flex;
     flex-direction: column;

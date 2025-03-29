@@ -3,7 +3,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./Admin/theme";
-
+import ApplyForm from "./Component/JobBoard/ApplyForm";
 import Login from "./Component/Login/Login";
 import Signup from "./Component/Signup/Signup";
 import VideoCall from "./Component/VideoCall/Screens/Lobby";
@@ -90,7 +90,7 @@ function App() {
                 {/* <Route path="/profile" element={<Profile />} /> */}
                 <Route path="/profile/:email" element={<Profile/>} />
                 <Route path="/forum" element={<Forum />} />
-
+                <Route path="/apply" element={<ApplyForm />} /> 
                 {/* Event Management */}
                 <Route
                   path="/list-event"

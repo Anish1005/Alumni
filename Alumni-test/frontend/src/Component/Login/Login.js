@@ -98,13 +98,13 @@ const Login = () => {
             </div>
             <button type="submit" className="loginsubmit">Login</button>
           </form>
-          {activeRole === 'Student' && (
+         
             <div className="alternate-action">
               <p>
                 Not a member? <a href="/signup">Sign up</a>
               </p>
             </div>
-          )}
+      
           <hr />
           <b>OR</b>
           <button className="google-login-button" onClick={handleGoogleLogin}>

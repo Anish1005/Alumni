@@ -65,7 +65,7 @@ const Signup = () => {
   return (
     <div className="signup">
       <div className="signup-container">
-        <div className="role-switcher">
+        <div className="signup-role-switcher">
           <div
             className={`role-option ${role === 'Student' ? 'active' : ''}`}
             onClick={() => setRole('Student')}
@@ -84,13 +84,13 @@ const Signup = () => {
           >
             Organization
           </div>
-          <div className="slider" style={{ left: role === 'Student' ? '0%' : role === 'Alumni' ? '33.33%' : '66.66%' }}></div>
+          <div className="signup-slider" style={{ left: role === 'Student' ? '0%' : role === 'Alumni' ? '33.33%' : '66.66%' }}></div>
         </div>
-        <div className="form-container">
+        <div className="signup-form-container">
           <h2>{role} Signup</h2>
           {error && <p className="error">{error}</p>}
           <form onSubmit={handleFormSignup}>
-            <div className="input-group">
+            <div className="signup-input-group">
               <label>Name</label>
               <input
                 type="text"
@@ -100,7 +100,7 @@ const Signup = () => {
                 required
               />
             </div>
-            <div className="input-group">
+            <div className="signup-input-group">
               <label>Email</label>
               <input
                 type="email"
@@ -110,7 +110,7 @@ const Signup = () => {
                 required
               />
             </div>
-            <div className="input-group">
+            <div className="signup-input-group">
               <label>Password</label>
               <input
                 type="password"
@@ -120,7 +120,7 @@ const Signup = () => {
                 required
               />
             </div>
-            <div className="input-group">
+            <div className="signup-input-group">
               <label>Confirm Password</label>
               <input
                 type="password"
@@ -133,7 +133,7 @@ const Signup = () => {
 
             {/* Show organization name field if role is Organization */}
             {role === 'Organization' && (
-              <div className="input-group">
+              <div className="signup-input-group">
                 <label>Organization Name</label>
                 <input
                   type="text"
@@ -146,7 +146,7 @@ const Signup = () => {
             )}
 
             <button type="submit">Signup</button>
-            <div className="alternate-action">
+            <div className="signup-alternate-action">
               <p>
                 Already a member? <a href="/">Log in</a>
               </p>
@@ -154,7 +154,7 @@ const Signup = () => {
           </form>
         </div>
         <hr />
-        <button className="google-login-button" onClick={handleGoogleSignIn}>
+        <button className="signup-google-login-button" onClick={handleGoogleSignIn}>
           <img
             src="https://cdn-icons-png.flaticon.com/128/300/300221.png"
             alt="Google logo"

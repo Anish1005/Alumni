@@ -60,7 +60,7 @@ const Home = () => {
         </div>
 
         {/* Center Column for Internships */}
-        <div className="center-bar">
+        <div className="center-bar1">
           <h2>Find Your Own Path</h2>
           <div className="job-post">
             <div className="job-info">

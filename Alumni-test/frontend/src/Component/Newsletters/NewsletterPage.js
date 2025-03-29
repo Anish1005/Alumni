@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './NewsletterPage.css';
+import EventList from '../../Admin/AdminComponents/Event/EventList';
+import {Link, useNavigate} from 'react-router-dom';
+import {useEffect, useState} from 'react';
 
 const NewsletterPage = ({ userRole }) => {
+  const navigate = useNavigate();
   const [newsletters, setNewsletters] = useState([
     {
       title: 'Alumni Success Stories',
@@ -40,9 +44,36 @@ const NewsletterPage = ({ userRole }) => {
       alert('Please fill all fields before publishing.');
     }
   };
+  const [name, setName] = useState('');
+
+  useEffect(() => {
+    const storedName = localStorage.getItem('email');
+    if (storedName) {
+      setName(storedName);
+    }
+  }, []);
 
   return (
     <div className="newsletter-page">
+      {/* Top Bar */}
+      <div className="top-bar">
+      <span className="app-name" onClick={() => navigate("/home")} style={{ cursor: "pointer" }}>
+      VESIT Link
+    </span>
+        <input type="text" placeholder="Search..." className="search-bar" />
+        <div className="user-profile">
+          <Link to={`/profile/${name}`}  className="user-profile-link">
+            <img
+              src="https://randomuser.me/api/portraits/men/4.jpg"
+              alt="User"
+              className="profile-pic"
+            />
+            <span style={{fontSize: '17px', fontWeight: 'bold'}}>
+              {name ? name : 'User'}!
+            </span>
+          </Link>
+        </div>
+      </div>
       <h1 className="newsletter-header">Alumni Newsletter</h1>
 
       {/* Conditionally Render Publish Section for Alumni */}

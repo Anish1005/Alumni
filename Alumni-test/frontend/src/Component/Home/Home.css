@@ -102,7 +102,7 @@
 }
 
 .left-bar,
-.center-bar,
+.center-bar1,
 .right-bar {
     height: calc(100vh - 72px);
     overflow-y: auto;
@@ -157,11 +157,12 @@
 
 
 /* Center Column */
-.center-bar {
+.center-bar1 {
     flex: 1;
     background-color: #ffffff;
     padding: 20px;
     text-align: center;
+    margin-top: 80px;
 }
 
 .center-bar h2 {
@@ -228,11 +229,12 @@
 }
 
 /* Right Sidebar */
-.right-bar {
+.right-bar{
     width: 26%;
     background-color: #ffffff;
     border-left: 1px solid #e5e7eb;
     padding: 20px;
+    margin-top: 80px;
 }
 
 .discover-peers,

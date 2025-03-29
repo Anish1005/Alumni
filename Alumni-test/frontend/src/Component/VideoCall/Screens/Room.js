@@ -4,9 +4,12 @@ import peer from "../Service/Peer";
 import { useSocket } from "../Context/SocketProvider";
 import './Room.css'
 // import Swal from 'sweetalert2';
-
+// import EventList from '../../../Admin/AdminComponents/Event/EventList';
+import {Link} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 const RoomPage = () => {
+  const navigate = useNavigate();
   const socket = useSocket();
   const [remoteSocketId, setRemoteSocketId] = useState(null);
   const [myStream, setMyStream] = useState();
@@ -112,8 +115,36 @@ const RoomPage = () => {
     handleNegoNeedFinal,
   ]);
 
+   const [name, setName] = useState('');
+  
+    useEffect(() => {
+      const storedName = localStorage.getItem('email');
+      if (storedName) {
+        setName(storedName);
+      }
+    }, []);
+
   return (
     <div className="room">
+      {/* Top Bar */}
+            <div className="top-bar">
+            <span className="app-name" onClick={() => navigate("/home")} style={{ cursor: "pointer" }}>
+            VESIT Link
+          </span>
+              <input type="text" placeholder="Search..." className="search-bar" />
+              <div className="user-profile">
+                <Link to={`/profile/${name}`} className="user-profile-link">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/4.jpg"
+                    alt="User"
+                    className="profile-pic"
+                  />
+                  <span style={{fontSize: '17px', fontWeight: 'bold'}}>
+                    {name ? name : 'User'}!
+                  </span>
+                </Link>
+              </div>
+            </div>
       <div className="navcontent">
         
         <div className="room-page">
