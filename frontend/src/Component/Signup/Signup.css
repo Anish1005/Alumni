@@ -1,0 +1,198 @@
+/* General styles */
+.signup {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #f0f4ff, #dfe9f3);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* background-image: url('https://images.unsplash.com/photo-1502740479091-635887520276?q=80&w=1769&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); */
+  background-repeat: no-repeat;
+  /* Prevents the image from repeating */
+  background-position: left;
+  /* Centers the image */
+  background-size: 2000px 1000px;
+  /* Width: 500px, Height: 300px */
+}
+
+.signup-alternate-action {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.signup-alternate-action a {
+  color: #4e9cff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.signup-alternate-action a:hover {
+  color: #6bc1ff;
+}
+
+/* Container styling */
+.signup-container {
+  width: 100%;
+  width: 500px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  background: #ffffff;
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+  opacity: 1;
+}
+
+/* Animation for smooth entry */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Role switcher styling */
+.signup-role-switcher{
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  background: #f3f6fa;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  padding-top: 10px;
+  
+  cursor: pointer;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.signup-role-option{
+  flex: 1;
+  padding: 12px 0;
+  text-align: center;
+  font-weight: 500;
+  color: #777;
+  transition: color 0.3s ease;
+  z-index: 1;
+}
+
+.signup-role-option.active {
+  color: #fff;
+  font-weight: 600;
+}
+
+.signup-slider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 33% !important;
+  background: linear-gradient(to right, #4e9cff, #6bc1ff);
+  border-radius: 50px;
+  transition: left 0.4s ease;
+  z-index: 0;
+}
+
+/* Form styling */
+.signup-alternate-action h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.signup-input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.signup-input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #666;
+}
+
+.signup-input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+.signup-input-group input:focus {
+  border-color: #6bc1ff;
+  outline: none;
+}
+
+.signup button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #4e9cff, #6bc1ff);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(to right, #6bc1ff, #4e9cff);
+  transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .signup-container {
+    max-width: 600px;
+    /* Wider for larger screens */
+  }
+}
+
+.google-login-button {
+  all: unset;
+  padding: 12px;
+  border-radius: 8px;
+  /* Reset all inherited styles */
+  width: 90%;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #ffffff;
+  border: 1px solid #dadce0;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #3c4043;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.google-login-button:hover {
+  background-color: #f7f8f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.google-login-button:active {
+  background-color: #ececec;
+}
+
+.google-logo {
+  width: 20px;
+  height: 20px;
+}

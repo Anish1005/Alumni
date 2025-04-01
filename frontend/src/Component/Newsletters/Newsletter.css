@@ -1,0 +1,204 @@
+/* General Styles */
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.single-newsletter-container {
+    width: 80%;
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Section */
+.single-newsletter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align elements properly */
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-top: 10px;
+}
+
+/* Top Black Line */
+.single-newsletter-header::before {
+    content: "";
+    position: absolute;
+    top: 18px; /* Aligns with ISSUE #10 */
+    left: 0;
+    width: calc(100% - 10px); 
+    height: 2px;
+    background-color: black;
+}
+
+/* Main Title */
+.single-newsletter-title {
+    font-size: 48px; 
+    font-family: "Libre Baskerville", serif; 
+    font-weight: normal;
+    margin: 0;
+    margin-top: 40px;
+}
+
+/* Right Section (Meta Details) */
+.single-newsletter-meta {
+    text-align: right;
+    font-size: 16px;
+    font-family: "Libre Baskerville", serif;
+    font-weight: normal;
+    position: relative;
+}
+
+/* Issue Badge */
+.single-newsletter-issue-badge {
+    background: black;
+    color: white;
+    padding: 5px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    text-transform: uppercase;
+    position: absolute;
+    top: 0px; /* Moves it slightly higher */
+    right: 0;
+    z-index: 10;
+}
+
+/* Increase Distance Below ISSUE #10 */
+.single-newsletter-issue-badge {
+    margin-bottom: 40px; /* Increased spacing below the badge */
+}
+
+/* Institute Name */
+.single-newsletter-institute {
+    display: block;
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 50px; 
+}
+
+/* Star Symbol */
+.single-newsletter-star {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* Date */
+.single-newsletter-date {
+    font-size: 14px;
+}
+
+/* Main Image Section */
+.single-newsletter-image-container {
+    position: relative;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.single-newsletter-main-image {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 5px;
+}
+
+.single-newsletter-image-caption {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: black;
+    color: white;
+    padding: 5px;
+    font-size: 0.9rem;
+}
+
+/* Content Section */
+.single-newsletter-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+/* Left Section */
+.single-newsletter-left {
+    width: 65%;
+    text-align: left; /* Left align all text */
+}
+
+.single-newsletter-achievements-title {
+    text-align: left;
+    margin-bottom: 25px; /* Increased spacing below */
+}
+
+/* Achievements Split */
+.single-newsletter-achievements {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.achievements-left, .achievements-right {
+    width: 48%;
+}
+
+/* Sidebar */
+.single-newsletter-right {
+    width: 30%;
+    padding: 20px;
+    border-left: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.single-newsletter-expect-title {
+    font-size: 20px; /* Slightly increased */
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.single-newsletter-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.single-newsletter-list li {
+    font-size: 18px; /* Increased font size */
+    padding: 15px 0; /* Increased spacing */
+    border-bottom: 1px solid black;
+    text-align: left;
+}
+
+.single-newsletter-list li:last-child {
+    border-bottom: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .single-newsletter-content {
+        flex-direction: column;
+    }
+
+    .single-newsletter-left,
+    .single-newsletter-right {
+        width: 100%;
+    }
+
+    .single-newsletter-achievements {
+        flex-direction: column;
+    }
+
+    .achievements-left,
+    .achievements-right {
+        width: 100%;
+    }
+}
