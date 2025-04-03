@@ -31,7 +31,7 @@ const ApplyForm = ({onClose}) => {
     <div className="home-container">
       {/* Top Bar */}
       <div className="top-bar">
-        <span className="app-name">VESIT Link</span>
+        <span className="app-name"><img src='https://s3.amazonaws.com/cdn.designcrowd.com/blog/30-Alumni-Logos-to-Make-an-Authoritative-Network/graduate-school-technology-by-mypen-brandcrowd.png' className='logo-home'></img>VESIT Link</span>
         <input type="text" placeholder="Search..." className="search-bar" />
         <div className="user-profile">
           <Link to={`/profile/${name}`} className="user-profile-link">
@@ -72,7 +72,7 @@ const ApplyForm = ({onClose}) => {
         </div>
 
         {/* Center Column for Internships */}
-        <div className="center-bar1">
+        <div className="center-bar2">
           <div className="fixed inset-0 bg-black bg-opacity-30 flex justify-center items-center">
             <div className="bg-white p-6 rounded-lg shadow-lg w-96">
               <h3 className="text-xl font-semibold mb-4">
@@ -103,19 +103,21 @@ const ApplyForm = ({onClose}) => {
                   onChange={handleChange}
                   required
                 />
+                <div className='buttons1'>
                 <div className="flex justify-between">
                   <button
                     type="submit"
-                    className="px-4 py-2 bg-green-600 text-white rounded"
+                    className="px-4 py-2 bg-green-600 text-white rounded mr-10"
                   >
                     Submit
                   </button>
                   <button
                     onClick={onClose}
-                    className="px-4 py-2 bg-gray-600 text-white rounded"
+                    className="px-4 py-2 bg-gray-600 text-white rounded mr-10"
                   >
                     Cancel
                   </button>
+                </div>
                 </div>
               </form>
             </div>

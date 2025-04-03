@@ -129,7 +129,7 @@ const RoomPage = () => {
       {/* Top Bar */}
             <div className="top-bar">
             <span className="app-name" onClick={() => navigate("/home")} style={{ cursor: "pointer" }}>
-            VESIT Link
+            <img src='https://s3.amazonaws.com/cdn.designcrowd.com/blog/30-Alumni-Logos-to-Make-an-Authoritative-Network/graduate-school-technology-by-mypen-brandcrowd.png' className='logo-home'></img>VESIT Link
           </span>
               <input type="text" placeholder="Search..." className="search-bar" />
               <div className="user-profile">

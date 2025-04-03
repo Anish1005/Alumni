@@ -38,6 +38,7 @@ import Geography from "./Admin/AdminComponents/geography/geography";
 
 // Added JobBoard Import
 import JobBoard from "./Component/JobBoard/JobBoard";
+import ResumeUpload from "./Component/Profile/ResumeUpload";
 
 function App() {
   const location = useLocation();
@@ -115,6 +116,7 @@ function App() {
 
                 {/* Added Job Board Route */}
                 <Route path="/job-board" element={<JobBoard />} />
+                <Route path="/resume_upload" element={<ResumeUpload />} />
               </Routes>
               <Chatbot />
             </>

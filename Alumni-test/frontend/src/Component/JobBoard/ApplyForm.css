@@ -78,3 +78,12 @@ input, textarea {
     cursor: pointer;
     color: #333;
 }
+
+.center-bar2{
+    margin-top:80px;
+    width:60%;
+}
+
+.buttons1{
+    margin-right:10px;
+}

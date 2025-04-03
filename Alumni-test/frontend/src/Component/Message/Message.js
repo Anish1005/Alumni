@@ -100,7 +100,7 @@ const Message = () => {
     <div className="home-container">
       {/* Top Bar */}
       <div className="top-bar">
-        <span className="app-name">VESIT Link</span>
+        <span className="app-name"><img src='https://s3.amazonaws.com/cdn.designcrowd.com/blog/30-Alumni-Logos-to-Make-an-Authoritative-Network/graduate-school-technology-by-mypen-brandcrowd.png' className='logo-home'></img>VESIT Link</span>
         <input type="text" placeholder="Search..." className="search-bar" />
         <div className="user-profile">
           <Link to={`/profile/${name}`} className="user-profile-link">
