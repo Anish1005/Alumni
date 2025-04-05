@@ -1,0 +1,270 @@
+/* CSS for People Component - Middle section and right column only */
+
+/* Middle Section - Find People */
+.middle-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    margin: 0 15px;
+    overflow-y: auto;
+    margin-top: 80px;
+
+}
+
+.find-people-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.find-people-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.results-count {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+}
+
+.people-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.person-card {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #e0e0e0;
+}
+
+.person-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.person-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 16px;
+    border: 2px solid #f0f0f0;
+}
+
+.person-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.person-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+    color: #0a66c2;
+}
+
+.person-info {
+    margin-bottom: 12px;
+}
+
+.person-branch,
+.person-graduation,
+.person-description {
+    display: flex;
+    align-items: center;
+    margin: 3px 0;
+    font-size: 13px;
+    color: #666;
+}
+
+.info-icon {
+    margin-right: 6px;
+    color: #777;
+}
+
+.person-actions {
+    display: flex;
+    margin-top: auto;
+    gap: 8px;
+}
+
+.connect-btn {
+    background-color: #0a66c2;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    padding: 6px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    flex: 1;
+}
+
+.connect-btn:hover {
+    background-color: #084c92;
+}
+
+.message-btn {
+    background-color: white;
+    color: #666;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.message-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Search Bar Styling */
+.search-container {
+    position: relative;
+    flex: 1;
+    max-width: 500px;
+    margin: 0 20px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 8px 8px 8px 36px;
+    border-radius: 20px;
+    border: 1px solid #e0e0e0;
+    outline: none;
+    font-size: 14px;
+    background-color: #f0f2f5;
+    transition: all 0.2s;
+}
+
+.search-bar:focus {
+    background-color: white;
+    border-color: #0a66c2;
+    box-shadow: 0 0 0 2px rgba(10, 102, 194, 0.2);
+}
+
+/* Right Bar - Connections */
+.people-right-bar {
+    width: 300px;
+    padding: 20px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    margin-right: 15px;
+    overflow-y: auto;
+    margin-top: 80px;
+}
+
+.connections-list-1 {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    color: #084c92;
+}
+
+.section-title-1 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 16px 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.connection-card-1 {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.connection-card-1:last-child {
+    border-bottom: none;
+}
+
+.connection-avatar-1 {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+}
+
+.connection-info {
+    flex: 1;
+    margin-bottom: 8px;
+}
+
+.connection-name-1 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: #0a66c2;
+}
+
+.connection-role-1,
+.connection-location-1 {
+    font-size: 13px;
+    color: #666;
+    margin: 2px 0;
+    display: flex;
+    align-items: center;
+}
+
+.connection-company-1 {
+    font-weight: 500;
+}
+
+.mutual-connections-1 {
+    font-size: 12px;
+    color: #666;
+    margin: 6px 0;
+    display: flex;
+    align-items: center;
+}
+
+.btn.btn-outline-primary.message-btn-1 {
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: fit-content;
+    border-color: #0a66c2;
+    color: #0a66c2;
+    transition: all 0.2s;
+}
+
+.btn.btn-outline-primary.message-btn-1:hover {
+    background-color: rgba(10, 102, 194, 0.1);
+}

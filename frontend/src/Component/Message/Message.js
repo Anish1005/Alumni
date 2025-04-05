@@ -1,9 +1,9 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import io from 'socket.io-client';
 import moment from 'moment';
 import './Message.css';
 import EventList from '../../Admin/AdminComponents/Event/EventList';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const socket = io('http://localhost:4000');
 
@@ -30,7 +30,7 @@ const Message = () => {
   useEffect(() => {
     socket.on('clients-total', count => setClientsTotal(count));
     socket.on('chat-message', data =>
-      setMessages(prev => [...prev, {...data, read: false}])
+      setMessages(prev => [...prev, { ...data, read: false }])
     );
     socket.on('chat-history', history => setMessages(history));
     socket.on('typing', user => {
@@ -40,7 +40,7 @@ const Message = () => {
 
     socket.on('message-read', messageId => {
       setMessages(prev =>
-        prev.map(msg => (msg.id === messageId ? {...msg, read: true} : msg))
+        prev.map(msg => (msg.id === messageId ? { ...msg, read: true } : msg))
       );
     });
 
@@ -49,13 +49,13 @@ const Message = () => {
 
 
   const [name, setName] = useState('');
-  
-    useEffect(() => {
-      const storedName = localStorage.getItem('email');
-      if (storedName) {
-        setName(storedName);
-      }
-    }, []);
+
+  useEffect(() => {
+    const storedName = localStorage.getItem('email');
+    if (storedName) {
+      setName(storedName);
+    }
+  }, []);
 
   useEffect(() => {
     // Close dropdown when clicking outside
@@ -78,7 +78,7 @@ const Message = () => {
   const sendMessage = e => {
     e.preventDefault();
     if (message.trim()) {
-      const chatData = {user: username, message, room, timestamp: new Date()};
+      const chatData = { user: username, message, room, timestamp: new Date() };
       socket.emit('message', chatData);
       setMessage('');
     }
@@ -87,7 +87,7 @@ const Message = () => {
   let typingTimeout;
   const handleTyping = () => {
     if (room) {
-      socket.emit('typing', {username, room});
+      socket.emit('typing', { username, room });
 
       clearTimeout(typingTimeout);
       typingTimeout = setTimeout(() => {
@@ -109,7 +109,7 @@ const Message = () => {
               alt="User"
               className="profile-pic"
             />
-            <span style={{fontSize: '17px', fontWeight: 'bold'}}>
+            <span style={{ fontSize: '17px', fontWeight: 'bold' }}>
               {name ? name : 'User'}!
             </span>
           </Link>
@@ -120,8 +120,11 @@ const Message = () => {
       <div className="main-content">
         {/* Left Navigation Bar */}
         <div className="left-bar">
-          <Link to={`/profile/${name}`}>
+          <Link to={`/profile/${name}`} >
             <button>Profile</button>
+          </Link>
+          <Link to="/people" className="find-people">
+            <button>Find People!</button>
           </Link>
           <Link to="/messages">
             <button>Messages</button>
@@ -136,7 +139,7 @@ const Message = () => {
             <button>Video Call</button>
           </Link>
           <Link to="/forum" className="big-forum-button">
-            <button>🚀 Connect with Seniors & Ask Your Queries!</button>
+            <button>🚀 Connect with Seniors!</button>
           </Link>
         </div>
 
@@ -212,9 +215,8 @@ const Message = () => {
                   {messages.map((msg, index) => (
                     <li
                       key={index}
-                      className={`message ${
-                        msg.user === username ? 'right' : 'left'
-                      } ${msg.read ? 'read' : ''}`}
+                      className={`message ${msg.user === username ? 'right' : 'left'
+                        } ${msg.read ? 'read' : ''}`}
                     >
                       <strong>{msg.user}:</strong> {msg.message}
                       <span className="timestamp">

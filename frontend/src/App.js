@@ -35,9 +35,8 @@ import Line from "./Admin/AdminComponents/line/line";
 import FAQ from "./Admin/AdminComponents/faq/faq";
 import Calendar from "./Admin/AdminComponents/calendar/calendar";
 import Geography from "./Admin/AdminComponents/geography/geography";
-
-// Added JobBoard Import
 import JobBoard from "./Component/JobBoard/JobBoard";
+import People from './Component/People/People';
 
 function App() {
   const location = useLocation();
@@ -88,9 +87,9 @@ function App() {
                 <Route path="/video_call/room/:roomId" element={<Room />} />
                 <Route path="/home" element={<Home />} />
                 {/* <Route path="/profile" element={<Profile />} /> */}
-                <Route path="/profile/:email" element={<Profile/>} />
+                <Route path="/profile/:email" element={<Profile />} />
                 <Route path="/forum" element={<Forum />} />
-                <Route path="/apply" element={<ApplyForm />} /> 
+                <Route path="/apply" element={<ApplyForm />} />
                 {/* Event Management */}
                 <Route
                   path="/list-event"
@@ -115,6 +114,8 @@ function App() {
 
                 {/* Added Job Board Route */}
                 <Route path="/job-board" element={<JobBoard />} />
+                <Route path="/people" element={<People />} />
+
               </Routes>
               <Chatbot />
             </>

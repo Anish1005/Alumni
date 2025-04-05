@@ -1,7 +1,7 @@
 import React from 'react';
 import './Forum.css';
-import {Link} from 'react-router-dom';
-import {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 const ForumPage = () => {
   const [posts, setPosts] = useState([
@@ -41,7 +41,7 @@ const ForumPage = () => {
     setPosts(prevPosts =>
       prevPosts.map(post =>
         post.id === postId
-          ? {...post, replies: [...post.replies, replyText]}
+          ? { ...post, replies: [...post.replies, replyText] }
           : post
       )
     );
@@ -50,13 +50,13 @@ const ForumPage = () => {
   };
 
   const [name, setName] = useState('');
-  
-    useEffect(() => {
-      const storedName = localStorage.getItem('email');
-      if (storedName) {
-        setName(storedName);
-      }
-    }, []);
+
+  useEffect(() => {
+    const storedName = localStorage.getItem('email');
+    if (storedName) {
+      setName(storedName);
+    }
+  }, []);
 
   return (
     <div className="home-container">
@@ -71,7 +71,7 @@ const ForumPage = () => {
               alt="User"
               className="profile-pic"
             />
-            <span style={{fontSize: '17px', fontWeight: 'bold'}}>
+            <span style={{ fontSize: '17px', fontWeight: 'bold' }}>
               {name ? name : 'User'}!
             </span>
           </Link>
@@ -81,8 +81,11 @@ const ForumPage = () => {
       <div className="main-content">
         {/* Left Sidebar */}
         <div className="left-bar">
-          <Link to="/profile">
+          <Link to={`/profile/${name}`} >
             <button>Profile</button>
+          </Link>
+          <Link to="/people" className="find-people">
+            <button>Find People!</button>
           </Link>
           <Link to="/messages">
             <button>Messages</button>
@@ -90,11 +93,14 @@ const ForumPage = () => {
           <Link to="/job-board">
             <button>Job Board</button>
           </Link>
-          <Link to="/newsletters">
+          <Link to="/newsletter">
             <button>Newsletters</button>
           </Link>
           <Link to="/video_call">
             <button>Video Call</button>
+          </Link>
+          <Link to="/forum" className="big-forum-button">
+            <button>🚀 Connect with Seniors!</button>
           </Link>
         </div>
 

@@ -1,14 +1,14 @@
 import React from 'react';
 import './ApplyForm.css';
 import EventList from '../../Admin/AdminComponents/Event/EventList';
-import {Link} from 'react-router-dom';
-import {useEffect, useState} from 'react';
+import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
-const ApplyForm = ({onClose}) => {
-  const [formData, setFormData] = useState({name: '', email: '', resume: ''});
+const ApplyForm = ({ onClose }) => {
+  const [formData, setFormData] = useState({ name: '', email: '', resume: '' });
 
   const handleChange = e => {
-    setFormData({...formData, [e.target.name]: e.target.value});
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = e => {
@@ -40,7 +40,7 @@ const ApplyForm = ({onClose}) => {
               alt="User"
               className="profile-pic"
             />
-            <span style={{fontSize: '17px', fontWeight: 'bold'}}>
+            <span style={{ fontSize: '17px', fontWeight: 'bold' }}>
               {name ? name : 'User'}!
             </span>
           </Link>
@@ -51,8 +51,11 @@ const ApplyForm = ({onClose}) => {
       <div className="main-content">
         {/* Left Navigation Bar */}
         <div className="left-bar">
-          <Link to={`/profile/${name}`}>
+          <Link to={`/profile/${name}`} >
             <button>Profile</button>
+          </Link>
+          <Link to="/people" className="find-people">
+            <button>Find People!</button>
           </Link>
           <Link to="/messages">
             <button>Messages</button>
@@ -67,7 +70,7 @@ const ApplyForm = ({onClose}) => {
             <button>Video Call</button>
           </Link>
           <Link to="/forum" className="big-forum-button">
-            <button>🚀 Connect with Seniors & Ask Your Queries!</button>
+            <button>🚀 Connect with Seniors!</button>
           </Link>
         </div>
 

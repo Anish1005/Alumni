@@ -1,6 +1,6 @@
 import React from 'react';
-import {useEffect, useState} from 'react';
-import {Link} from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   MapPin,
   GraduationCap,
@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Connections.css';
-import {Bar, Pie, Doughnut} from 'react-chartjs-2';
+import { Bar, Pie, Doughnut } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   BarElement,
@@ -32,14 +32,14 @@ ChartJS.register(
 
 const Connections = () => {
 
-    const [name, setName] = useState('');
-    
-      useEffect(() => {
-        const storedName = localStorage.getItem('email');
-        if (storedName) {
-          setName(storedName);
-        }
-      }, []);
+  const [name, setName] = useState('');
+
+  useEffect(() => {
+    const storedName = localStorage.getItem('email');
+    if (storedName) {
+      setName(storedName);
+    }
+  }, []);
   const userData = {
     name: 'Sadneya Samant',
     role: 'Alumni',
@@ -132,7 +132,7 @@ const Connections = () => {
               alt="User"
               className="profile-pic"
             />
-            <span style={{fontSize: '17px', fontWeight: 'bold'}}>
+            <span style={{ fontSize: '17px', fontWeight: 'bold' }}>
               {name ? name : 'User'}!
             </span>
           </Link>
@@ -143,8 +143,11 @@ const Connections = () => {
       <div className="main-content">
         {/* Left Navigation Bar */}
         <div className="left-bar">
-          <Link to="/profile">
+          <Link to={`/profile/${name}`} >
             <button>Profile</button>
+          </Link>
+          <Link to="/people" className="find-people">
+            <button>Find People!</button>
           </Link>
           <Link to="/messages">
             <button>Messages</button>
@@ -159,7 +162,7 @@ const Connections = () => {
             <button>Video Call</button>
           </Link>
           <Link to="/forum" className="big-forum-button">
-            <button>🚀 Connect with Seniors & Ask Your Queries!</button>
+            <button>🚀 Connect with Seniors!</button>
           </Link>
         </div>
         {/* Connections Content (Wrapped) */}
@@ -256,7 +259,7 @@ const Connections = () => {
                         },
                       ],
                     }}
-                    options={{responsive: true, maintainAspectRatio: false}}
+                    options={{ responsive: true, maintainAspectRatio: false }}
                   />
                 </div>
               </div>
@@ -285,7 +288,7 @@ const Connections = () => {
                         },
                       ],
                     }}
-                    options={{responsive: true, maintainAspectRatio: false}}
+                    options={{ responsive: true, maintainAspectRatio: false }}
                   />
                 </div>
               </div>
@@ -318,7 +321,7 @@ const Connections = () => {
                         },
                       ],
                     }}
-                    options={{responsive: true, maintainAspectRatio: false}}
+                    options={{ responsive: true, maintainAspectRatio: false }}
                   />
                 </div>
               </div>

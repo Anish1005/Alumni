@@ -42,6 +42,9 @@ const Home = () => {
           <Link to={`/profile/${name}`} >
             <button>Profile</button>
           </Link>
+          <Link to="/people" className="find-people">
+            <button>Find People!</button>
+          </Link>
           <Link to="/messages">
             <button>Messages</button>
           </Link>
@@ -55,7 +58,7 @@ const Home = () => {
             <button>Video Call</button>
           </Link>
           <Link to="/forum" className="big-forum-button">
-            <button>🚀 Connect with Seniors & Ask Your Queries!</button>
+            <button>🚀 Connect with Seniors!</button>
           </Link>
         </div>
 

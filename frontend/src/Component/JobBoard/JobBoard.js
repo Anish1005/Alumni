@@ -2,8 +2,8 @@ import React from 'react';
 import ApplyForm from './ApplyForm';
 
 import EventList from '../../Admin/AdminComponents/Event/EventList';
-import {Link,useNavigate} from 'react-router-dom';
-import {useEffect, useState,} from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useEffect, useState, } from 'react';
 
 import './JobBoard.css';
 
@@ -119,12 +119,12 @@ const JobBoard = () => {
   const [selectedJob, setSelectedJob] = useState(null);
   const [name, setName] = useState('');
   const navigate = useNavigate();
-    useEffect(() => {
-      const storedName = localStorage.getItem('email');
-      if (storedName) {
-        setName(storedName);
-      }
-    }, []);
+  useEffect(() => {
+    const storedName = localStorage.getItem('email');
+    if (storedName) {
+      setName(storedName);
+    }
+  }, []);
   return (
     <div className="home-container">
       {/* Top Bar */}
@@ -138,7 +138,7 @@ const JobBoard = () => {
               alt="User"
               className="profile-pic"
             />
-            <span style={{fontSize: '17px', fontWeight: 'bold'}}>
+            <span style={{ fontSize: '17px', fontWeight: 'bold' }}>
               {name ? name : 'User'}!
             </span>
           </Link>
@@ -149,8 +149,11 @@ const JobBoard = () => {
       <div className="main-content">
         {/* Left Navigation Bar */}
         <div className="left-bar">
-          <Link to={`/profile/${name}`}>
+          <Link to={`/profile/${name}`} >
             <button>Profile</button>
+          </Link>
+          <Link to="/people" className="find-people">
+            <button>Find People!</button>
           </Link>
           <Link to="/messages">
             <button>Messages</button>
@@ -165,7 +168,7 @@ const JobBoard = () => {
             <button>Video Call</button>
           </Link>
           <Link to="/forum" className="big-forum-button">
-            <button>🚀 Connect with Seniors & Ask Your Queries!</button>
+            <button>🚀 Connect with Seniors!</button>
           </Link>
         </div>
 
@@ -181,7 +184,7 @@ const JobBoard = () => {
                     {job.company} - {job.location}
                   </p>
                   <p className="text-sm text-gray-500">{job.type}</p>
-                  <button className="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700" onClick={() => navigate(`/apply`)}>Apply</button> 
+                  <button className="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700" onClick={() => navigate(`/apply`)}>Apply</button>
                   {/* <button
                     onClick={() => setSelectedJob(job)}
                     className="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
@@ -192,7 +195,7 @@ const JobBoard = () => {
               ))}
             </div>
 
-          
+
           </div>
         </div>
 
