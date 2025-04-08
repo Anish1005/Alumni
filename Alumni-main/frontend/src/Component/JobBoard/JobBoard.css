@@ -1,0 +1,211 @@
+/* Color variables - simplified palette */
+:root {
+    --primary-red: #b22222;
+    --light-red: #e63946;
+    --dark-red: #8b0000;
+    --white: #ffffff;
+    --off-white: #f8f9fa;
+    --light-gray: #e9ecef;
+    --medium-gray: #dee2e6;
+    --text-gray: #495057;
+    --border-gray: #ced4da;
+}
+
+/* General styles */
+body {
+    background-color: var(--off-white);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-gray);
+    overflow-x: hidden;
+}
+
+/* Main layout container */
+.main-container {
+    width: 100%;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.main-content {
+    display: flex !important;
+    justify-content: space-between !important;
+    margin-top: 20px;
+    width: 100%;
+    gap: 24px;
+}
+
+/* Center column (job board) */
+.center-bar-jb {
+    flex: 1;
+    max-width: 68% !important;
+    margin-left: 50px;
+}
+
+/* Right column */
+.right-bar {
+    width: 30% !important;
+    min-width: 280px;
+}
+
+/* Main job board container */
+.job-board-container {
+    width: 100%;
+    overflow-y: auto;
+
+}
+
+.job-board-content {
+    padding: 0;
+    max-width: 100%;
+}
+
+.job-board-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--light-gray);
+    color: var(--primary-red);
+    text-align: center;
+}
+
+/* Recommendations section */
+.recommendation-panel {
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+    background-color: rgba(178, 34, 34, 0.05);
+    border-radius: 8px;
+    border-left: 4px solid rgb(57, 23, 126);
+}
+
+.recommendation-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: rgb(57, 25, 120);
+    margin-top: 0;
+}
+
+.recommendation-description {
+    color: var(--text-gray);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.recommendation-button {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    background-color: rgb(96, 42, 203);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.recommendation-button:hover {
+    background-color: var(--dark-red);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Job listing grid - fixed scrolling issue */
+.job-listings {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    width: 100%;
+    max-height: calc(100vh - 250px);
+    padding-right: 8px;
+}
+
+/* Job card */
+.job-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    border-top: 3px solid var(--primary-red);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 180px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Job title */
+.job-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--primary-red);
+    margin-bottom: 0.75rem;
+    margin-top: 0;
+}
+
+/* Job company/location */
+.job-company {
+    color: var(--text-gray);
+    font-weight: 400;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Job type tag */
+.job-type {
+    display: inline-block;
+    background-color: var(--light-gray);
+    color: var(--primary-red);
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* Apply button */
+.apply-button {
+    margin-top: auto;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-red);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    width: 100%;
+    font-size: 0.9rem;
+    height: 40px;
+}
+
+.apply-button:hover {
+    background-color: var(--dark-red);
+}
+
+/* Right column cards - minimalist styling */
+.right-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+    font-size: 1.125rem;
+    color: var(--primary-red);
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--light-gray);
+}

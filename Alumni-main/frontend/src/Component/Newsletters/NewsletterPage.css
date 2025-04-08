@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+.newsletter-page {
+    max-width: 1400px;
+    margin:80px;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px; /* Slight left alignment */
+}
+
+.newsletter-header {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 50px; /* Increased space from heading to cards */
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+}
+
+.newsletter-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 25px; /* Increased spacing between cards */
+    width: 100%;
+}
+
+.newsletter-card {
+    background: #ffffff;
+    border-radius: 5px; /* Reduced roundness */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 380px; /* Slightly wider cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 550px; /* Extended height */
+    font-family: 'Inter', sans-serif;
+}
+
+.newsletter-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.newsletter-frequency {
+    font-size: 1rem;
+    color: #666;
+    margin: 15px 0 5px 0;
+    text-align: left;
+}
+
+.newsletter-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 12px;
+}
+
+.newsletter-description {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.7;
+    text-align: left;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.newsletter-email {
+    width: 85%; /* Reduced length */
+    padding: 14px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Reduced roundness */
+    margin-bottom: 20px;
+}
+
+.newsletter-subscribe {
+    width: 100%;
+    padding: 18px; /* Increased button size */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: #007bff;
+    border: none;
+    border-radius: 5px; /* Reduced roundness */
+    cursor: pointer;
+}
+
+.newsletter-subscribe:hover {
+    background: #0056b3;
+}

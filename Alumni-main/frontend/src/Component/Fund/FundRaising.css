@@ -1,0 +1,74 @@
+.crowdfunding-container {
+  max-width: 800px;
+  margin: 30px 85px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  width: 600px;
+}
+
+.title {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #1e3a8a;
+}
+
+.project-form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-form h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #1e3a8a;
+}
+
+.project-form input,
+.project-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+.project-form button {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.project-form button:hover {
+  background-color: #4e71cf;
+}
+
+.project-list h2 {
+  margin-bottom: 15px;
+  color: #34495e;
+}
+
+.project-card {
+  background-color: #ffffff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 5px solid #1e3a8a;;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.project-card p {
+  margin: 5px 0;
+}

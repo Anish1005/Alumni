@@ -1,0 +1,608 @@
+/* General Styles */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-color: #f9fafb;
+    font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
+    color: #222;
+    overflow-x: hidden;
+}
+
+/* Main Navigation Bar */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c12126;
+    /* VESIT Red from the image */
+    height: 90px;
+    padding: 0 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.vesit-logo {
+    height: 40px;
+    margin-right: 12px;
+}
+
+.app-name {
+    font-size: 1.6rem;
+    font-weight: 900 !important;
+    color: #ffffff !important;
+    letter-spacing: 0.5px;
+}
+
+.nav-center {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-link {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
+    padding: 8px 12px !important;
+    border-radius: 4px !important;
+    transition: background-color 0.2s !important;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.search-bar {
+    padding: 8px 16px;
+    width: 220px;
+    border-radius: 20px;
+    border: none;
+    font-size: 0.9rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    outline: none;
+    transition: width 0.3s;
+}
+
+.search-bar:focus {
+    width: 280px;
+    background-color: #ffffff;
+}
+
+/* User Profile */
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.user-profile-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.profile-pic {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 8px;
+    border: 2px solid #ffffff;
+    object-fit: cover;
+}
+
+.username {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.left-bar,
+.center-bar,
+.right-bar {
+    overflow-y: auto;
+    padding: 0 16px;
+}
+
+/* Left Sidebar */
+.left-bar {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+}
+
+.left-bar a {
+    text-decoration: none;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.left-bar button {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    color: #333;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.left-bar button:hover {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.left-bar .highlight-button {
+    background: linear-gradient(135deg, #c12126, #e63e44);
+    color: white;
+    font-weight: 600;
+    border: none;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(193, 33, 38, 0.3);
+}
+
+.left-bar .highlight-button:hover {
+    background: linear-gradient(135deg, #a91b20, #d0353a);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(193, 33, 38, 0.4);
+}
+
+/* Center Column */
+.center-bar {
+    flex: 1;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Create Post Box */
+.create-post-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 16px;
+}
+
+.create-post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.small-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+    object-fit: cover;
+}
+
+.post-input {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 20px;
+    border: 1px solid #e5e7eb;
+    font-size: 0.95rem;
+    background-color: #f9fafb;
+}
+
+.create-post-actions {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 12px;
+}
+
+.post-action-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: none;
+    background: none;
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.post-action-button:hover {
+    background-color: #f3f4f6;
+}
+
+.post-button {
+    background-color: #c12126;
+    color: white;
+    padding: 8px 16px;
+    margin-left: auto;
+}
+
+.post-button:hover {
+    background-color: #a91b20;
+}
+
+
+.post-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 12px;
+    object-fit: cover;
+}
+
+.post-author {
+    flex-grow: 1;
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+}
+
+.author-headline {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 2px 0 0;
+}
+
+.post-time {
+    font-size: 0.8rem;
+    color: #888;
+    margin: 2px 0 0;
+}
+
+.post-content {
+    padding: 0 16px 16px;
+}
+
+.post-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.post-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-top: 1px solid #f0f0f0;
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.action-button:hover {
+    background-color: #f3f4f6;
+}
+
+.action-icon {
+    margin-right: 6px;
+    width: 20px;
+    height: 20px;
+}
+
+/* Job Card */
+.job-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 16px;
+}
+
+.job-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.company-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    margin-right: 12px;
+    object-fit: contain;
+    background-color: #f9fafb;
+    padding: 4px;
+}
+
+.job-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 4px;
+    color: #333;
+}
+
+.company-name {
+    font-size: 0.95rem;
+    margin: 0 0 4px;
+    color: #555;
+}
+
+.job-location {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+}
+
+.job-details {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.job-posted {
+    font-weight: 500;
+}
+
+.job-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+/* Right Sidebar */
+.right-bar {
+    width: 28%;
+    padding-left: 20px;
+}
+
+.right-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 24px;
+    padding: 16px;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #c12126;
+    margin: 10px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+/* Alumni Spotlight */
+.spotlight-content {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.spotlight-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 16px;
+    border: 3px solid #f0f0f0;
+}
+
+.spotlight-info h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 4px;
+    color: #333;
+}
+
+.spotlight-info p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 0 4px;
+}
+
+.spotlight-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: #c12126;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.spotlight-link:hover {
+    text-decoration: underline;
+}
+
+/* Peer Cards */
+.peer-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.peer-item {
+    margin-bottom: 12px;
+}
+
+.peer-card {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.peer-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.peer-pic {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+}
+
+.peer-info {
+    flex-grow: 1;
+}
+
+.peer-info h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 4px;
+    color: #333;
+}
+
+.peer-info p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.connect-button {
+    background-color: transparent;
+    color: #c12126;
+    border: 1px solid #c12126;
+    border-radius: 16px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.connect-button:hover {
+    background-color: #c12126;
+    color: white;
+}
+
+/* Button Styles */
+.button-primary {
+    background-color: #c12126;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    padding: 8px 16px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.button-secondary {
+    background-color: white;
+    color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 16px;
+    padding: 5px 16px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.connections-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 16px;
+    padding: 16px;
+}
+
+.connections-header {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 12px;
+}
+
+.connection-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.connection-details {
+    flex-grow: 1;
+    margin: 0 12px;
+}
+
+.connection-name {
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0 0 2px;
+}
+
+.connection-headline {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
