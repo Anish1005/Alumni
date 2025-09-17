@@ -11,7 +11,7 @@ model = joblib.load('model.pkl')
 vectorizer = joblib.load('vectorizer.pkl')
 
 # Connect to MongoDB
-client = MongoClient('mongodb+srv://sadneyasam05:root@cluster0.7gxwyxh.mongodb.net/?retryWrites=true&w=majority')
+client = MongoClient('__url__')
 db = client['test']
 users_collection = db['profiles']
 
