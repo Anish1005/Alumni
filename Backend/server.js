@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 // Connect to MongoDB
 mongoose
   .connect(
-    'mongodb+srv://sadneyasam05:root@cluster0.7gxwyxh.mongodb.net/?retryWrites=true&w=majority',
+    '__mongo_url__',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -82,8 +82,8 @@ app.post('/api/users', async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'sadneyasam05@gmail.com',
-        pass: 'tbzt ehwi tbnx jncf', // use env variable or App Password
+        user: '__email__',
+        pass: '__code__', // use env variable or App Password
         
       },
     });
