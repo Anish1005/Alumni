@@ -7,9 +7,6 @@ import Connections from './Connections';
 import axios from 'axios';
 import Papa from 'papaparse';
 
-// https://api.sheetbest.com/sheets/6794bafd-366b-4b94-a42f-ac3629755813
-
-// https://docs.google.com/spreadsheets/d/e/2PACX-1vR2T1Dxu6TW_gKWaFXsWyCUB0RLeCBEknbVfqcJ3WphovSb2l9a1qyfPew7qdeChVhujwBzKdXxyT3S/pub?output=csv
 
 const SearchPeople = () => {
   const [people, setPeople] = useState([]);
