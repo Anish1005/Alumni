@@ -20,7 +20,7 @@ const SearchPeople = () => {
   // useEffect(() => {
   //   const fetchData = async () => {
   //     try {
-  //       const res = await axios.get('https://docs.google.com/spreadsheets/d/15R-tU7kAPUd7eGGLHKQogVjJWefMsKuScVipSmL5G7Y/edit?usp=gmail_thread&ts=67f88e6e'); // Replace with your actual API URL
+  //       const res = await axios.get('__FILE NAME__'); // Replace with your actual API URL
   //       setPeople(res.data);
   //     } catch (err) {
   //       console.error('Error fetching people from sheet:', err);
